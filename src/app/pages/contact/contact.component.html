@@ -1,1 +1,37 @@
-<p>contact works!</p>
+<div class="contact-container">
+  <div class="contact-header">
+    <h1>Get in Touch</h1>
+    <p>We're here to help you with any questions about our vinyl bending machines</p>
+  </div>
+
+  <div class="contact-methods">
+    <p-card styleClass="contact-card whatsapp-card">
+      <ng-template pTemplate="header">
+        <i class="pi pi-whatsapp"></i>
+      </ng-template>
+      <h3>WhatsApp</h3>
+      <p>Chat with us directly for quick responses</p>
+      <p-button 
+        label="Start Chat" 
+        icon="pi pi-whatsapp"
+        styleClass="p-button-success"
+        (onClick)="openWhatsApp()">
+      </p-button>
+    </p-card>
+
+    <p-card styleClass="contact-card email-card">
+      <ng-template pTemplate="header">
+        <i class="pi pi-envelope"></i>
+      </ng-template>
+      <h3>Email</h3>
+      <p>Send us a detailed message</p>
+      <a href="mailto:vpbtools@gmail.com">
+        <p-button 
+          label="Send Email" 
+          icon="pi pi-envelope"
+          styleClass="p-button-info">
+        </p-button>
+      </a>
+    </p-card>
+  </div>
+</div>

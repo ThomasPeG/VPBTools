@@ -1,0 +1,24 @@
+<section class="tool-section">
+  <div class="tool-container">
+    <div class="tool-content">
+      <h2>{{toolInfo.title}}</h2>
+      <p class="description">{{toolInfo.description}}</p>
+      <ul class="features-list">
+        <li *ngFor="let feature of toolInfo.features">
+          <i class="pi pi-check"></i>
+          <span>{{feature}}</span>
+        </li>
+      </ul>
+      <div class="cta-buttons">
+        <p-button 
+          label="View Catalog" 
+          styleClass="p-button-raised" 
+          [routerLink]="['/machines']">
+        </p-button>
+      </div>
+    </div>
+    <div class="tool-image">
+      <img [src]="toolInfo.imageUrl" alt="VPB Tools Machines">
+    </div>
+  </div>
+</section>

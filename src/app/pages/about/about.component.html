@@ -1,44 +1,52 @@
 <div class="about-container">
   <div class="about-header">
-    <h2>Sobre VPB Tools</h2>
-    <p>Expertos en soluciones de doblado de vinilo para escaleras</p>
+    <h2>About VPB Tools</h2>
+    <p>Experts in vinyl bending solutions for stairs</p>
   </div>
 
   <div class="about-content">
-    <div class="about-text">
-      <h3>Nuestra Historia</h3>
-      <p>Con más de {{yearsFounded}} años de experiencia, VPB Tools se ha convertido en líder en la fabricación de máquinas dobladoras de vinilo para escaleras. Nuestra dedicación a la calidad y la innovación nos ha permitido servir a cientos de profesionales en la industria.</p>
-      
-      <h3>Nuestra Misión</h3>
-      <p>Nos dedicamos a proporcionar soluciones de alta calidad que simplifican el proceso de instalación de vinilo en escaleras, permitiendo a nuestros clientes entregar resultados excepcionales en cada proyecto.</p>
+    <div class="card-container">
+      <p-card class="history-card">
+        <ng-template pTemplate="header">
+          <h3>Our History</h3>
+        </ng-template>
+        <p>With over {{yearsFounded}} years of experience, VPB Tools has become a leader in manufacturing vinyl bending machines for stairs. Our dedication to quality and innovation has allowed us to serve hundreds of professionals in the industry.</p>
+      </p-card>
+
+      <p-card class="mission-card">
+        <ng-template pTemplate="header">
+          <h3>Our Mission</h3>
+        </ng-template>
+        <p>We are dedicated to providing high-quality solutions that simplify the vinyl installation process on stairs, enabling our clients to deliver exceptional results in every project.</p>
+      </p-card>
     </div>
 
     <div class="stats-grid">
       <div class="stat-card">
         <span class="stat-number">{{yearsFounded}}</span>
-        <span class="stat-label">Años de Experiencia</span>
+        <span class="stat-label">Years of Experience</span>
       </div>
       <div class="stat-card">
         <span class="stat-number">{{projectsCompleted}}+</span>
-        <span class="stat-label">Proyectos Completados</span>
+        <span class="stat-label">Completed Projects</span>
       </div>
       <div class="stat-card">
         <span class="stat-number">{{satisfiedClients}}+</span>
-        <span class="stat-label">Clientes Satisfechos</span>
+        <span class="stat-label">Satisfied Clients</span>
       </div>
     </div>
 
     <div class="cta-section">
-      <h3>¿Listo para revolucionar tu negocio?</h3>
-      <p>Descubre cómo nuestras máquinas pueden transformar tu trabajo</p>
+      <h3>Ready to revolutionize your business?</h3>
+      <p>Discover how our machines can transform your work</p>
       <div class="cta-buttons">
         <p-button 
-          label="Ver Máquinas" 
+          label="View Machines" 
           styleClass="p-button-raised" 
           [routerLink]="['/machines']">
         </p-button>
         <p-button 
-          label="Contáctanos" 
+          label="Contact Us" 
           styleClass="p-button-outlined" 
           [routerLink]="['/contact']">
         </p-button>

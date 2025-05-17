@@ -1,0 +1,99 @@
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    p {
+      color: var(--text-color-secondary);
+      font-size: 1.2rem;
+    }
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+
+    ::ng-deep .contact-card {
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .p-card-body {
+        padding: 2rem;
+      }
+
+      .p-card-content {
+        padding: 0;
+      }
+
+      i {
+        font-size: 2.5rem;
+        margin: 1rem 0;
+      }
+
+      h3 {
+        color: var(--primary-color);
+        margin: 1rem 0;
+        font-weight: 500;
+      }
+
+      p {
+        color: var(--text-color-secondary);
+        margin-bottom: 2rem;
+      }
+
+      .p-button {
+        width: 100%;
+      }
+    }
+
+    .whatsapp-card {
+      i {
+        color: #25D366;
+      }
+    }
+
+    .email-card {
+      i {
+        color: var(--primary-color);
+      }
+
+      a {
+        text-decoration: none;
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 2rem 1rem;
+
+    .contact-header {
+      margin-bottom: 2rem;
+
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+}

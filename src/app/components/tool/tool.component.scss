@@ -5,16 +5,17 @@
   .tool-container {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
     align-items: center;
+    gap: 4rem;
 
     .tool-content {
+      flex: 1;
+
       h2 {
         color: var(--primary-color);
         font-size: 2.5rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .description {
@@ -41,39 +42,108 @@
           }
         }
       }
-
-      .cta-buttons {
-        margin-top: 2rem;
-      }
     }
 
     .tool-image {
-      img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      max-width: 600px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ::ng-deep .custom-carousel {
+        .p-carousel-content {
+          .p-carousel-container {
+            .bending-image {
+              padding: 1rem;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              img {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+                object-fit: contain;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+              }
+            }
+          }
+        }
+
+        .p-carousel-indicators {
+          .p-carousel-indicator {
+            button {
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              background-color: var(--surface-d);
+
+              &.p-highlight {
+                background-color: var(--primary-color);
+              }
+            }
+          }
+        }
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  .tool-section {
-    padding: 2rem 1rem;
+  .tool-container {
+    flex-direction: column;
+    gap: 2rem !important;
 
-    .tool-container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    .tool-content, .tool-image {
+      width: 100%;
+      max-width: 100% !important;
+    }
+  }
+}
 
-      .tool-content {
-        h2 {
-          font-size: 2rem;
+.bending-showcase {
+  margin: 2rem 0;
+
+  h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+
+  ::ng-deep .custom-carousel {
+    .p-carousel-content {
+      .p-carousel-container {
+        .bending-image {
+          padding: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          }
         }
       }
+    }
 
-      .tool-image {
-        order: -1;
+    .p-carousel-indicators {
+      .p-carousel-indicator {
+        button {
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: var(--surface-d);
+
+          &.p-highlight {
+            background-color: var(--primary-color);
+          }
+        }
       }
     }
   }

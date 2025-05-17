@@ -18,7 +18,20 @@
       </div>
     </div>
     <div class="tool-image">
-      <img [src]="toolInfo.imageUrl" alt="VPB Tools Machines">
+      <p-carousel
+        [value]="toolInfo.bendingImages"
+        [numVisible]="1"
+        [numScroll]="1"
+        [circular]="true"
+        [showNavigators]="true"
+        [showIndicators]="true"
+        styleClass="custom-carousel">
+        <ng-template let-image pTemplate="item">
+          <div class="bending-image">
+            <img [src]="image" alt="Ejemplo de doblez">
+          </div>
+        </ng-template>
+      </p-carousel>
     </div>
   </div>
 </section>

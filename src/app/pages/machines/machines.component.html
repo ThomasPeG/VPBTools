@@ -5,69 +5,24 @@
   </div>
 
   <div class="machines-grid">
-    <!-- VP Heater Card -->
-    <p-card class="vp-heater">
+    <p-card *ngFor="let machine of machines" [styleClass]="machine.id">
       <ng-template pTemplate="header">
-        <div class="machine-image">
-          <img [src]="vpHeater.imageUrl" [alt]="vpHeater.name">
+        <div class="machine-image" (click)="showFullImage(machine.imageUrl)">
+          <img [src]="getMainImage(machine)" [alt]="machine.name">
         </div>
       </ng-template>
       
-      <h2>{{vpHeater.name}}</h2>
-      <p class="description">{{vpHeater.description}}</p>
+      <h2>{{machine.name}}</h2>
+      <p class="description">{{machine.description}}</p>
       
       <h3>Features:</h3>
       <ul>
-        <li *ngFor="let feature of vpHeater.features">{{feature}}</li>
+        <li *ngFor="let feature of machine.features">{{feature}}</li>
       </ul>
       
-      <div class="price">
-        <span>${{vpHeater?.price?.toLocaleString() || 'Contactar para precio'}}</span>
-      </div>
-      
-      <ng-template pTemplate="footer">
-        <div class="card-footer">
-          <p-button 
-            icon="pi pi-whatsapp"
-            label="Ask about this product" 
-            styleClass="p-button-success"
-            (onClick)="askAboutProduct(vpHeater.name)">
-          </p-button>
-        </div>
-      </ng-template>
-    </p-card>
-
-    <!-- VP Bender Card -->
-    <p-card class="vp-bender">
-      <ng-template pTemplate="header">
-        <div class="machine-image">
-          <p-carousel
-            [value]="getBenderImages()"
-            [numVisible]="1"
-            [numScroll]="1"
-            [circular]="true"
-            [showNavigators]="true"
-            [showIndicators]="true">
-            <ng-template let-image pTemplate="item">
-              <div class="carousel-item-container">
-                <img [src]="image" [alt]="vpBender.name">
-              </div>
-            </ng-template>
-          </p-carousel>
-        </div>
-      </ng-template>
-      
-      <h2>{{vpBender.name}}</h2>
-      <p class="description">{{vpBender.description}}</p>
-      
-      <h3>Features:</h3>
-      <ul>
-        <li *ngFor="let feature of vpBender.features">{{feature}}</li>
-      </ul>
-
       <div class="versions">
         <h3>Available Versions:</h3>
-        <div class="version-item" *ngFor="let version of vpBender.versions">
+        <div class="version-item" *ngFor="let version of machine.versions">
           <span class="size">{{version.size}} Model</span>
           <span class="price">${{version.price.toLocaleString()}}</span>
         </div>
@@ -79,10 +34,22 @@
             icon="pi pi-whatsapp"
             label="Ask about this product" 
             styleClass="p-button-success"
-            (onClick)="askAboutProduct(vpBender.name)">
+            (onClick)="askAboutProduct(machine.name)">
           </p-button>
         </div>
       </ng-template>
     </p-card>
   </div>
+
+  <p-dialog 
+    [(visible)]="displayImageDialog" 
+    [modal]="true" 
+    [dismissableMask]="true"
+    [closeOnEscape]="true"
+    [style]="{width: '90vw', maxWidth: '1200px'}"
+    styleClass="image-dialog">
+    <div class="fullscreen-image">
+      <img [src]="selectedImage" alt="Imagen ampliada">
+    </div>
+  </p-dialog>
 </div>

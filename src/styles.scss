@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #2C3E50;
+  --secondary-color: #34495E;
+  --background-color: #FFFFFF;
+  --text-color: #2C3E50;
+  --light-gray: #ECF0F1;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.subheading {
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+}

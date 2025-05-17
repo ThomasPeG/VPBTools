@@ -1,0 +1,48 @@
+<div class="about-container">
+  <div class="about-header">
+    <h2>Sobre VPB Tools</h2>
+    <p>Expertos en soluciones de doblado de vinilo para escaleras</p>
+  </div>
+
+  <div class="about-content">
+    <div class="about-text">
+      <h3>Nuestra Historia</h3>
+      <p>Con más de {{yearsFounded}} años de experiencia, VPB Tools se ha convertido en líder en la fabricación de máquinas dobladoras de vinilo para escaleras. Nuestra dedicación a la calidad y la innovación nos ha permitido servir a cientos de profesionales en la industria.</p>
+      
+      <h3>Nuestra Misión</h3>
+      <p>Nos dedicamos a proporcionar soluciones de alta calidad que simplifican el proceso de instalación de vinilo en escaleras, permitiendo a nuestros clientes entregar resultados excepcionales en cada proyecto.</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-number">{{yearsFounded}}</span>
+        <span class="stat-label">Años de Experiencia</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">{{projectsCompleted}}+</span>
+        <span class="stat-label">Proyectos Completados</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">{{satisfiedClients}}+</span>
+        <span class="stat-label">Clientes Satisfechos</span>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <h3>¿Listo para revolucionar tu negocio?</h3>
+      <p>Descubre cómo nuestras máquinas pueden transformar tu trabajo</p>
+      <div class="cta-buttons">
+        <p-button 
+          label="Ver Máquinas" 
+          styleClass="p-button-raised" 
+          [routerLink]="['/machines']">
+        </p-button>
+        <p-button 
+          label="Contáctanos" 
+          styleClass="p-button-outlined" 
+          [routerLink]="['/contact']">
+        </p-button>
+      </div>
+    </div>
+  </div>
+</div>

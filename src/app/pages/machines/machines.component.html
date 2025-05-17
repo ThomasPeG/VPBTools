@@ -1,0 +1,96 @@
+<div class="machines-container">
+  <div class="machines-header">
+    <h1>Our Vinyl Bending Machines</h1>
+    <p>Choose the perfect machine for your stair installation needs</p>
+  </div>
+
+  <div class="machines-grid">
+    <!-- VP Heater Card -->
+    <p-card class="vp-heater">
+      <ng-template pTemplate="header">
+        <div class="machine-image">
+          <img [src]="vpHeater.imageUrl" [alt]="vpHeater.name">
+        </div>
+      </ng-template>
+      
+      <h2>{{vpHeater.name}}</h2>
+      <p class="description">{{vpHeater.description}}</p>
+      
+      <h3>Features:</h3>
+      <ul>
+        <li *ngFor="let feature of vpHeater.features">{{feature}}</li>
+      </ul>
+      
+      <div class="price">
+        <span>${{vpHeater?.price?.toLocaleString() || 'Contactar para precio'}}</span>
+      </div>
+      
+      <ng-template pTemplate="footer">
+        <div class="card-footer">
+          <p-button 
+            label="Request Quote" 
+            styleClass="p-button-raised" 
+            [routerLink]="['/contact']">
+          </p-button>
+          <p-button 
+            label="Learn More" 
+            styleClass="p-button-outlined"
+            (onClick)="openManual('vp-heater')">
+          </p-button>
+        </div>
+      </ng-template>
+    </p-card>
+
+    <!-- VP Bender Card -->
+    <p-card class="vp-bender">
+      <ng-template pTemplate="header">
+        <div class="machine-image">
+          <p-carousel
+            [value]="getBenderImages()"
+            [numVisible]="1"
+            [numScroll]="1"
+            [circular]="true"
+            [showNavigators]="true"
+            [showIndicators]="true">
+            <ng-template let-image pTemplate="item">
+              <div class="carousel-item-container">
+                <img [src]="image" [alt]="vpBender.name">
+              </div>
+            </ng-template>
+          </p-carousel>
+        </div>
+      </ng-template>
+      
+      <h2>{{vpBender.name}}</h2>
+      <p class="description">{{vpBender.description}}</p>
+      
+      <h3>Features:</h3>
+      <ul>
+        <li *ngFor="let feature of vpBender.features">{{feature}}</li>
+      </ul>
+
+      <div class="versions">
+        <h3>Available Versions:</h3>
+        <div class="version-item" *ngFor="let version of vpBender.versions">
+          <span class="size">{{version.size}} Model</span>
+          <span class="price">${{version.price.toLocaleString()}}</span>
+        </div>
+      </div>
+      
+      <ng-template pTemplate="footer">
+        <div class="card-footer">
+          <p-button 
+            label="Request Quote" 
+            styleClass="p-button-raised" 
+            [routerLink]="['/contact']">
+          </p-button>
+          <p-button 
+            label="Learn More" 
+            styleClass="p-button-outlined"
+            (onClick)="openManual('vp-bender')">
+          </p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

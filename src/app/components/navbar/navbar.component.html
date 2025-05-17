@@ -1,0 +1,46 @@
+<nav class="navbar-container">
+  <p-button 
+    icon="pi pi-bars" 
+    (click)="toggleMenu($event)"
+    styleClass="p-button-text menu-toggle">
+  </p-button>
+  
+  <div class="nav-links" [class.active]="isMenuOpen">
+    <p-button 
+      label="Inicio" 
+      styleClass="p-button-text" 
+      (onClick)="navigateTo('/')"
+      [class.active-link]="isRouteActive('/')">
+    </p-button>
+    <p-button 
+      label="Sobre Nosotros" 
+      styleClass="p-button-text" 
+      (onClick)="navigateTo('/about')"
+      [class.active-link]="isRouteActive('/about')">
+    </p-button>
+    <p-button 
+      label="Servicios" 
+      styleClass="p-button-text" 
+      (onClick)="navigateTo('/services')"
+      [class.active-link]="isRouteActive('/services')">
+    </p-button>
+    <p-button 
+      label="Máquinas" 
+      styleClass="p-button-text" 
+      (onClick)="navigateTo('/machines')"
+      [class.active-link]="isRouteActive('/machines')">
+    </p-button>
+    <p-button 
+      label="Aplicaciones" 
+      styleClass="p-button-text" 
+      (onClick)="navigateTo('/applications')"
+      [class.active-link]="isRouteActive('/applications')">
+    </p-button>
+    <p-button 
+      label="Contacto" 
+      styleClass="p-button-text" 
+      (onClick)="navigateTo('/contact')"
+      [class.active-link]="isRouteActive('/contact')">
+    </p-button>
+  </div>
+</nav>

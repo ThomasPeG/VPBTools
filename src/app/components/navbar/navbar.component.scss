@@ -1,0 +1,72 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  ::ng-deep {
+    .menu-toggle {
+      display: none;
+      margin-right: 1rem;
+      
+      .p-button {
+        padding: 0.5rem;
+        
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+
+    .p-button.p-button-text {
+      color: var(--text-color);
+      
+      &:hover {
+        color: var(--primary-color);
+        background-color: transparent;
+      }
+      
+      &.active-link {
+        color: var(--primary-color);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    margin-right: 2rem;
+  }
+
+  @media screen and (max-width: 960px) {
+    ::ng-deep .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 250px;
+      background-color: var(--background-color);
+      flex-direction: column;
+      padding: 80px 2rem;
+      margin: 0;
+      transition: right 0.3s ease;
+      box-shadow: -2px 0 4px rgba(0,0,0,0.1);
+
+      &.active {
+        right: 0;
+      }
+    }
+  }
+}

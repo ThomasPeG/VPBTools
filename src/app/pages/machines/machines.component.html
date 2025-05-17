@@ -28,14 +28,10 @@
       <ng-template pTemplate="footer">
         <div class="card-footer">
           <p-button 
-            label="Request Quote" 
-            styleClass="p-button-raised" 
-            [routerLink]="['/contact']">
-          </p-button>
-          <p-button 
-            label="Learn More" 
-            styleClass="p-button-outlined"
-            (onClick)="openManual('vp-heater')">
+            icon="pi pi-whatsapp"
+            label="Ask about this product" 
+            styleClass="p-button-success"
+            (onClick)="askAboutProduct(vpHeater.name)">
           </p-button>
         </div>
       </ng-template>
@@ -80,14 +76,10 @@
       <ng-template pTemplate="footer">
         <div class="card-footer">
           <p-button 
-            label="Request Quote" 
-            styleClass="p-button-raised" 
-            [routerLink]="['/contact']">
-          </p-button>
-          <p-button 
-            label="Learn More" 
-            styleClass="p-button-outlined"
-            (onClick)="openManual('vp-bender')">
+            icon="pi pi-whatsapp"
+            label="Ask about this product" 
+            styleClass="p-button-success"
+            (onClick)="askAboutProduct(vpBender.name)">
           </p-button>
         </div>
       </ng-template>

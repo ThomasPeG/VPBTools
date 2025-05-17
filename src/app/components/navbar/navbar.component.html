@@ -1,10 +1,13 @@
 <nav class="navbar-container">
-  <p-button 
-    icon="pi pi-bars" 
-    (click)="toggleMenu($event)"
-    styleClass="p-button-text menu-toggle">
-  </p-button>
-  
+  <div class="navbar-left">
+    <img src="assets/vpb-logo.png" alt="VPB Tools Logo" class="navbar-logo">
+    <p-button 
+      icon="pi pi-bars" 
+      (click)="toggleMenu($event)"
+      styleClass="p-button-text menu-toggle">
+    </p-button>
+  </div>
+
   <div class="nav-links" [class.active]="isMenuOpen">
     <p-button 
       label="Inicio" 
@@ -30,5 +33,21 @@
       (onClick)="navigateTo('/contact')"
       [class.active-link]="isRouteActive('/contact')">
     </p-button>
+  </div>
+
+  <div class="social-buttons">
+    <p-button 
+      icon="pi pi-whatsapp"
+      styleClass="p-button-rounded p-button-success"
+      (onClick)="openWhatsApp()">
+    </p-button>
+    <a href="https://www.instagram.com/vpbtools/?igsh=cGlpMjEwZXA2cnA%3D" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <p-button 
+        icon="pi pi-instagram"
+        styleClass="p-button-rounded p-button-secondary instagram-button">
+      </p-button>
+    </a>
   </div>
 </nav>

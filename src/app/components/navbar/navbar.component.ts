@@ -36,4 +36,11 @@ export class NavbarComponent {
   isRouteActive(route: string): boolean {
     return this.router.url === route;
   }
+
+  openWhatsApp(): void {
+    const phoneNumber = '14077908177';
+    const message = 'Hello! I am interested in learning more about VPB Tools vinyl bending machines. Could you provide me with more information?';
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
 }

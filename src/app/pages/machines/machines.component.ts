@@ -80,4 +80,11 @@ export class MachinesComponent {
     const url = `https://vpbtools.com/manuals/${machineId}`;
     this.document.defaultView?.open(url, '_blank');
   }
+
+  askAboutProduct(productName: string): void {
+    const phoneNumber = '14077908177';
+    const message = `Hello! I am interested in learning more about the ${productName}. Could you provide me with more information about specifications and pricing?`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  }
 }

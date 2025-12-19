@@ -50,11 +50,11 @@ export class MachinesComponent {
       versions: [
         {
           size: '70"',
-          price: 2000.00
+          price: 2300.00
         },
         {
-          size: '50"',
-          price: 1600.00
+          size: '48"',
+          price: 1900.00
         }
       ]
     },
@@ -73,11 +73,11 @@ export class MachinesComponent {
       versions: [
         {
           size: '72"',
-          price: 2500.00
+          price: 2600.00
         },
         {
           size: '60"',
-          price: 1900.00
+          price: 2000.00
         }
       ]
     }
